@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>О продукте</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<header>
+    <p>Тестовое задание <b>NAUMEN</b>. Выполнил: <a href="https://t.me/nlobashov" target="_blank">Лобашов Николай</a></p>
+    <nav>
+        <a href="/products">Главная</a>
+        <a href="/products/new">Создать позицию</a>
+    </nav>
+</header>
+
+<div class="wrapper">
+    <div class="content">
+        <h2>О продукте</h2>
+        <table class="table__products">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Название</th>
+                    <th>Описание</th>
+                    <th>Количество</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td th:text="${product.getId()}" class="column-id"></td>
+                    <td th:text="${product.getName()}"></td>
+                    <td th:text="${product.getDescription()}"></td>
+                    <td th:text="${product.getQuantity()}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

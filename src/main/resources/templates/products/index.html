@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список позиций</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+    <header>
+        <p>Тестовое задание <b>NAUMEN</b>. Выполнил: <a href="https://t.me/nlobashov" target="_blank">Лобашов Николай</a></p>
+        <nav>
+            <a href="/products">Главная</a>
+            <a href="/products/new">Создать позицию</a>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <div class="content">
+            <h2>Складской учёт</h2>
+            <a href="/products/new" class="btn-new-product">Добавить позицию</a>
+            <form th:method="GET" th:action="@{/products/filter}" class="search">
+                <input type="text" name="pattern" placeholder="Поиск" autocomplete="off">
+                <input type="submit" value="Найти">
+            </form>
+            <table class="table__products">
+                <thead>
+                    <tr>
+                        <th>Название</th>
+                        <th>Количество</th>
+                        <th colspan="3">Управление</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="product : ${products}">
+                        <td th:text="${product.getName()}"></td>
+                        <td th:text="${product.getQuantity()}"></td>
+                        <td>
+                            <form class="btn-control" th:method="GET" th:action="@{/products/{id}(id=${product.getId()})}">
+                                <input type="submit" value="Подробнее">
+                            </form>
+                        </td>
+                        <td>
+                            <form class="btn-control" th:method="GET" th:action="@{/products/edit/{id}(id=${product.getId()})}">
+                                <input type="submit" value="Редакт.">
+                            </form>
+                        </td>
+                        <td>
+                            <form class="btn-control" th:method="DELETE" th:action="@{/products/{id}(id=${product.getId()})}">
+                                <input type="submit" value="Удалить">
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

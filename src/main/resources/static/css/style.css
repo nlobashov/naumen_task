@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+header {
+    width: 100%;
+}
+
+header > p {
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+header > p > a {
+    color: #484848;
+}
+
+nav {
+    width: 100%;
+    background: #f9f9fb;
+    padding: 10px 20px;
+    border-top: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+
+nav > a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #484848;
+}
+
+nav > a:hover {
+    text-decoration: underline;
+}
+
+.wrapper {
+    width: 70%;
+    min-width: 1000px;
+    margin: 0 auto;
+}
+
+.content > h2 {
+    text-align: center;
+    line-height: 2;
+}
+
+.table__products {
+    width: 100%;
+    border: 2px solid  #cdcdcd;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table__products th {
+    font-weight: bold;
+    padding: 5px;
+    background: #efefef;
+    border: 2px solid #dddddd;
+    text-align: center;
+}
+.table__products td {
+    text-align: left;
+    padding: 5px 10px;
+    border: 1px solid #dddddd;
+}
+
+.table__products tbody tr:nth-child(odd){
+    background: #fff;
+}
+.table__products tbody tr:nth-child(even){
+    background: #F7F7F7;
+}
+
+td.column-id {
+    text-align: center;
+}
+
+a.btn-new-product {
+    width: 20%;
+    margin: 10px auto 20px;
+    color: #484848;
+    font-size: 20px;
+    background: #f9f9fb;
+    border-radius: 5px;
+    text-align: center;
+    display: block;
+    padding: 5px;
+    border: 2px solid #cdcdcd;
+    text-decoration: none;
+}
+
+a.btn-new-product:hover {
+    background: #dadada;
+}
+
+form.form-create {
+    width: 500px;
+    margin: 10px auto;
+}
+
+form.form-create input,
+form.form-create textarea {
+    width: 300px;
+    display: block;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+form.form-create > p {
+    text-align: center;
+    line-height: 2;
+}
+
+form.form-create textarea {
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 200px;
+}
+
+form.form-create input.btn-submit {
+    margin-top: 10px;
+    color: #484848;
+    font-size: 20px;
+    background: #f9f9fb;
+    text-align: center;
+    border: 2px solid #cdcdcd;
+}
+
+form.form-create input.btn-submit:hover {
+    background: #dadada;
+    cursor: pointer;
+}
+
+div.errors {
+    text-align: center;
+    color: #ff0000;
+}
+
+form.btn-control {
+    text-align: center;
+}
+
+form.btn-control > input {
+    padding: 5px;
+}
+
+form.search {
+    margin-bottom: 10px;
+}
+
+form.search > input {
+    padding: 10px;
+}
+
+form.search > input[type="text"] {
+    min-width: 300px;
+}

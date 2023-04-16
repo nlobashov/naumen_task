@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${page_title}"></title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+    <header>
+        <p>Тестовое задание <b>NAUMEN</b>. Выполнил: <a href="https://t.me/nlobashov" target="_blank">Лобашов Николай</a></p>
+        <nav>
+            <a href="/products">Главная</a>
+            <a href="/products/new">Создать позицию</a>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <div class="content">
+            <h2 th:text="${page_title}">Title</h2>
+            <form class="form-create" th:method="PUT" th:action="@{/products/{id}(id=*{id})}" th:object="${product}">
+                <p><label for="form-name">Наименование</label></p>
+                <input type="text" th:field="*{name}" id="form-name" autocomplete="off">
+                <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="errors">ErrorName</div>
+
+                <p><label for="form-description">Описание</label></p>
+                <textarea th:field="*{description}" id="form-description"></textarea>
+
+                <p><label for="form-quantity">Количество</label></p>
+                <input type="text" th:field="*{quantity}" id="form-quantity" autocomplete="off">
+                <div th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}" class="errors">ErrorQuantity</div>
+                <input type="submit" class="btn-submit" value="Обновить">
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
