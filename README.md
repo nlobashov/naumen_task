@@ -3,6 +3,7 @@
 <h2>Методы API</h2>
 <p><b>GET</b> /api/products/ - получить все позиции</p>
 <p><b>GET</b> /api/products/{id} - получить позицию</p>
+<p><b>GET</b> /api/products/filter?pattern={pattern} - найти позиции по шаблону</p>
 <p><b>POST</b> /api/products/ - добавить позицию</p>
 <p><b>PUT</b> /api/products/ - обновить позицию</p>
 <p><b>DELETE</b> /api/products/{id} - удалить позицию</p>
